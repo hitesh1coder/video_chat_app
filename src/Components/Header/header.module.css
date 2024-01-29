@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  height: 7vh;
+}
+.logo_div,
+.info_div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.logo_div {
+  width: 65%;
+  padding: 0 2rem;
+}
+.info_div {
+  justify-content: space-around;
+  width: 30%;
+}
+.info_div img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 480px) {
+  .logo_div {
+    padding: 0;
+  }
+}
