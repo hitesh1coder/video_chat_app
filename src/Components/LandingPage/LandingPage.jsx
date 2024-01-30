@@ -28,8 +28,13 @@ const LandingPage = () => {
     setMeetingLink(e.target.value);
   };
   const handleJoinMeeting = useCallback(() => {
-    if (meetingLink) {
-      navigate(`${meetingLink}`);
+    let joiningLink = meetingLink.substring(
+      meetingLink.indexOf("/"),
+      meetingLink.length
+    );
+    console.log(joiningLink);
+    if (joiningLink) {
+      navigate(`${joiningLink}`);
     } else {
       setError("This not a valid link");
     }

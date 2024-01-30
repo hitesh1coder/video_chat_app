@@ -7,7 +7,6 @@ const CallingPage = () => {
   const [username, setUsername] = useState("h");
 
   const navigate = useNavigate();
-  // console.log(import.meta.env.VITE_APP_ID, import.meta.env.VITE_SERVER_SECRET);
 
   const myMeating = async (element) => {
     const appID = 1970923885;
@@ -29,7 +28,12 @@ const CallingPage = () => {
       sharedLinks: [
         {
           name: "Copy Link",
-          url: window.location.pathname + "?meatingId=" + meatingId,
+          url:
+            window.location.protocol +
+            window.location.host +
+            window.location.pathname +
+            "?meatingId=" +
+            meatingId,
         },
       ],
 
@@ -40,6 +44,7 @@ const CallingPage = () => {
       showLeaveRoomConfirmDialog: true,
       showScreenSharingButton: true,
       onReturnToHomeScreenClicked: () => {
+        uikit.hangUp();
         navigate("/");
       },
     });
